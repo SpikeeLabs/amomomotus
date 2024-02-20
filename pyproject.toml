@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "spk-motus"
+version = "0.0.1-alpha.1"
+description = "Motus using PyQt6"
+authors = ["Amaury ... <amaury.lerouxdupeyron@spikeelabs.fr>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10"
+
+pyqt6 = "6.6.1"
+unidecode = "^1.3.2"
+
+[tool.poetry.group.lint.dependencies]
+black = "23.12.1"
+isort = "5.13.2"
+
+[build-system]
+requires = ["poetry-core>=1.2.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+exclude = '''
+(
+    /(
+        \.git
+        |\.venv
+    )/
+)
+'''
+include = '\.pyi?$'
+line-length = 120
+
+[tool.isort]
+profile = "black"
+known_first_party = "compyle"
